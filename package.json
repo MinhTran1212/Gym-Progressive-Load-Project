@@ -1,0 +1,20 @@
+{
+  "name": "gym-progressive-load-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinhTran1212/Gym-Progressive-Load-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MinhTran1212/Gym-Progressive-Load-Project/issues"
+  },
+  "homepage": "https://github.com/MinhTran1212/Gym-Progressive-Load-Project#readme"
+}
