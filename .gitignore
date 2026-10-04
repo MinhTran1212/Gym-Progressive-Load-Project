@@ -147,3 +147,13 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# AI & Editor Agents
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
+**/skills-lock.json
+
+# Local AI memory
+PROJECT_STATE.md

@@ -38,4 +38,16 @@ export class ExercisesService {
     );
     return newExercises;
   }
+
+  deleteOne(id: number) {
+    this.findOne(id);
+    this.exercises = this.exercises.filter((ex) => ex.id !== id);
+    return { success: true }
+  }
+
+  updateOne(id: number, updateExerciseDto: UpdateExerciseDto) {
+    const exercise = this.findOne(id);
+    Object.assign(exercise, updateExerciseDto);
+    return exercise;
+  }
 }

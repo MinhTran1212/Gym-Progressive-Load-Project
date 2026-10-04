@@ -26,4 +26,14 @@ export class ExercisesController {
   findByMuscle(@Param('muscleGroup') muscle: string) {
     return this.exercisesService.findByMuscle(muscle);
   }
+
+  @Delete(':id')
+  deleteOne(@Param('id') id: string) {
+    return this.exercisesService.deleteOne(+id);
+  }
+
+  @Patch(':id')
+  updateOne(@Param('id') id: string, @Body() updateExerciseDto: UpdateExerciseDto) {
+    return this.exercisesService.updateOne(+id, updateExerciseDto);
+  }
 }
