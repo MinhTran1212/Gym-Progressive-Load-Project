@@ -1,5 +1,5 @@
 export class Exercise {
-    id: number;
+    id: string;
     name: string;
     muscleGroup: string;
 }

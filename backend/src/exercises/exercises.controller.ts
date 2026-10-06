@@ -19,7 +19,7 @@ export class ExercisesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.exercisesService.findOne(+id);
+    return this.exercisesService.findOne(id);
   }
 
   @Get('muscle/:muscleGroup')
@@ -29,11 +29,11 @@ export class ExercisesController {
 
   @Delete(':id')
   deleteOne(@Param('id') id: string) {
-    return this.exercisesService.deleteOne(+id);
+    return this.exercisesService.deleteOne(id);
   }
 
   @Patch(':id')
   updateOne(@Param('id') id: string, @Body() updateExerciseDto: UpdateExerciseDto) {
-    return this.exercisesService.updateOne(+id, updateExerciseDto);
+    return this.exercisesService.updateOne(id, updateExerciseDto);
   }
 }

@@ -5,3 +5,57 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Exercise {
+  id String @id @default(uuid())
+  name String @unique
+  muscleGroup String
+
+  
+  createdAt DateTime @default(now())
+  updateTime DateTime @updatedAt
+
+  set Set[]
+}
+
+model Set {
+  id String @id @default(uuid())
+  weight Decimal @db.Decimal(5,2)
+  rpe Int
+  rep Int
+  order Int @default(1)
+
+  workoutId String
+  workout Workout @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+
+  exerciseId String
+  exercise Exercise @relation(fields: [exerciseId], references: [id], onDelete: Restrict)
+
+  templateId String?
+  template Template? @relation(fields: [templateId], references: [id], onDelete: Restrict)
+
+  
+  createdAt DateTime @default(now())
+  
+}
+
+model Workout {
+  id String @id @default(uuid())
+  note String?
+
+  date DateTime @default(now())
+  createdAt DateTime @default(now())
+  updateTime DateTime @updatedAt
+
+  set Set[]
+}
+
+model Template {
+  id String @id @default(uuid())
+  name String
+
+  createdAt DateTime @default(now())
+  updateTime DateTime @updatedAt
+
+  set Set[]
+}
